@@ -13,10 +13,10 @@ const Page = async () => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex p-2">
         {/* Sidebar */}
         <div className="w-1/4">
-          <div className="flex flex-col gap-3 overflow-y-auto h-[550px] relative border-2 p-4">
+          <div className="flex flex-col gap-3 overflow-y-auto h-[550px] relative border-2 p-4 rounded-lg">
             {data.map((surah: any) => (
               <div key={surah.number} className="hover:underline">
                 <Link href={`/quran/${surah.number}`}>
@@ -27,7 +27,13 @@ const Page = async () => {
           </div>
         </div>
         {/* Main Content */}
-        <div className="w-3/4 p-4"></div>
+        <div className="w-3/4 p-4">
+          <div className="flex justify-center">
+            <h1 className="text-xl font-bold">
+              PILIH SALAH SATU SURAT DISAMPING
+            </h1>
+          </div>
+        </div>
       </div>
     </>
   );
