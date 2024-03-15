@@ -1,30 +1,12 @@
-import Link from "next/link";
+import * as React from "react";
 
-const Home = async () => {
-  const res = await fetch(`${process.env.API_URI}/quran`);
-
-  if (!res.ok) {
-    console.log("failed to fetch data");
-    return;
-  }
-
-  const resData = await res.json();
-  const data = resData.data;
-  console.log(data);
-
+const Home = () => {
   return (
-    <>
-      <div className="flex flex-col gap-3 p-2">
-        {data.map((doa: any) => {
-          return (
-            <div key={doa.number} className="border-2 p-4 rounded-lg">
-                <h1>{doa.asma.id.short}</h1>
-                <p>Ayat: {doa.ayat}</p>
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div className="flex justify-center items-center h-screen">
+      <h1 className="text-4xl font-bold text-center">
+        Selamat datang di website pintar mengaji
+      </h1>
+    </div>
   );
 };
 
