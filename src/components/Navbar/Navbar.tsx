@@ -4,6 +4,7 @@ import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import Search from "./Search";
 
 const Navbar = () => {
   const { setTheme } = useTheme();

@@ -13,7 +13,7 @@ const Page = async () => {
 
   return (
     <>
-      <div className="flex p-2">
+      <div className="flex px-2">
         {/* Sidebar */}
         <div className="w-1/4">
           <div className="flex flex-col gap-3 overflow-y-auto h-[550px] relative border-2 p-4 rounded-lg">
