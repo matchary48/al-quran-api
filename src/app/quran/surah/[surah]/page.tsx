@@ -32,7 +32,7 @@ const Page = async ({ params: { surah } }) => {
             <h1 className="text-xl">Surah: </h1>
             {data.map((surah: any) => (
               <div key={surah.number} className="hover:underline">
-                <Link href={`/quran/${surah.number}`}>
+                <Link href={`/quran/surah/${surah.number}`}>
                   <h1>{surah.asma.id.short}</h1>
                 </Link>
               </div>
@@ -51,12 +51,9 @@ const Page = async ({ params: { surah } }) => {
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            {detail.map((ayat) => {
+            {detail.map((ayat, index) => {
               return (
-                <div
-                  key={ayat.number}
-                  className="flex flex-col p-2 gap-4"
-                >
+                <div key={ayat.number} className="flex flex-col p-2 gap-4">
                   <div className="flex justify-end">
                     <p className="text-5xl right-0">{ayat.text.ar}</p>
                   </div>
@@ -69,7 +66,7 @@ const Page = async ({ params: { surah } }) => {
                     />
                   </audio>
                   <p>
-                    {/* [{ayat.number}:{ayat.number.insurah}] {ayat.translation.id} */}
+                    [{index + 1}:] {ayat.translation.id}
                   </p>
                   <hr />
                 </div>
