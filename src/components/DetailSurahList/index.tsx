@@ -41,9 +41,7 @@ const DetailSurahList = ({ data, doa, detail }) => {
         </button>
       </div>
       {/* Main Content */}
-      <div
-        className="w-full overflow-y-auto h-[550px]"
-      >
+      <div className="w-full overflow-y-auto h-[550px]">
         <div className="flex justify-center">
           <div className=" p-4 rounded-lg mb-4 flex flex-col  justify-center">
             <h1 className="text-3xl">Surah {doa.asma.id.short}</h1>
