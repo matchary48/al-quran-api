@@ -1,12 +1,26 @@
 "use client";
 
-import * as React from "react";
+import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
+  const [isLight, setIslight] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  const handleLight = () => {
+    setTheme("light");
+    setIslight(true);
+    setIsDark(false);
+  };
+
+  const handleDark = () => {
+    setTheme("dark");
+    setIslight(false);
+    setIsDark(true);
+  };
 
   return (
     <>
@@ -14,7 +28,7 @@ const Navbar = () => {
         <div className="flex items-center ">
           <Link href="/" className="text-xl font-bold">
             NgaJol
-          </Link>{" "}
+          </Link>
         </div>
 
         <div className="flex gap-6 justify-center items-center">
@@ -31,16 +45,16 @@ const Navbar = () => {
             Doa Harian
           </Link>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 border-2 rounded-full">
             <button
-              className="border-2 p-2 rounded-2xl"
-              onClick={() => setTheme("light")}
+              onClick={handleLight}
+              className={`rounded-full p-2 ${isLight ? "bg-white" : ""}`}
             >
               <SunIcon />
             </button>
             <button
-              className="border-2 p-2 rounded-2xl"
-              onClick={() => setTheme("dark")}
+              className={`rounded-full p-2 ${isDark ? "bg-black" : ""}`}
+              onClick={handleDark}
             >
               <MoonIcon />
             </button>
