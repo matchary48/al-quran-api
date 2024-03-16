@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const Page = async ({ params: { surah } }) => {
-  const res = await fetch(`${process.env.API_URI}/quran`);
-  const doaId = await fetch(`${process.env.API_URI}/quran/${surah}`);
+  const res = await fetch(`${process.env.SURAH_API_URI}/quran`);
+  const doaId = await fetch(`${process.env.SURAH_API_URI}/quran/${surah}`);
 
   if (!res.ok) {
     console.log("failed to fetch data");

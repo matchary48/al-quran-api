@@ -4,7 +4,6 @@ import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import Search from "./Search";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
@@ -20,14 +19,17 @@ const Navbar = () => {
 
         <div className="flex gap-6 justify-center items-center">
           <Link
-            href="/Surah"
+            href="/quran"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
           >
-            Surah
+            Quran
           </Link>
-          <button className="text-lg font-medium hover:text-gray-800 focus:outline-none">
+          <Link
+            href="/doa-harian"
+            className="text-lg font-medium hover:text-gray-800 focus:outline-none"
+          >
             Doa Harian
-          </button>
+          </Link>
 
           <div className="flex gap-4">
             <button
