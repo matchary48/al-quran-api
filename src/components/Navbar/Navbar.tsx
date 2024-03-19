@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-6 justify-center items-center">
+        <div className="flex gap-2 md:gap-6 justify-center items-center">
           <Link
             href="/quran"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
@@ -45,7 +45,14 @@ const Navbar = () => {
             Doa Harian
           </Link>
 
-          <div className="flex gap-4 border-2 rounded-full">
+          <Link
+            href="/hadis"
+            className="text-lg font-medium hover:text-gray-800 focus:outline-none"
+          >
+            Hadis
+          </Link>
+
+          <div className="flex gap-2 md:gap-4 border-2 rounded-full">
             <button
               onClick={handleLight}
               className={`rounded-full p-2 ${isLight ? "bg-white" : ""}`}

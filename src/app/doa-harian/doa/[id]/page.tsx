@@ -19,7 +19,6 @@ const Page = async ({ params: { id } }) => {
   const data = await res.json();
 
   const detaildata = await resDetaiData.json();
-  console.log(detaildata);
 
   return (
     <>
