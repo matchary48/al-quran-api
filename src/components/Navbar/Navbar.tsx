@@ -42,7 +42,7 @@ const Navbar = () => {
             href="/doa-harian"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
           >
-            Doa Harian
+            Doa 
           </Link>
 
           <Link
