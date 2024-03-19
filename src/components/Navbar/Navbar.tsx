@@ -39,14 +39,14 @@ const Navbar = () => {
             Quran
           </Link>
           <Link
-            href="/doa-harian"
+            href="/doa"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
           >
             Doa 
           </Link>
 
           <Link
-            href="/hadis"
+            href="/hadist"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
           >
             Hadis
