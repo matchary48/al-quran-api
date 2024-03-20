@@ -23,7 +23,7 @@ const DetailDoaList = ({ data, detailData }) => {
           <h1 className="text-xl">Surah: </h1>
           {data.map((doa) => (
             <div key={doa.id} className="hover:underline">
-              <Link href={`/doa-harian/doa/${doa.id}`}>
+              <Link href={`/doa/${doa.id}`}>
                 <h1>{doa.doa}</h1>
               </Link>
             </div>

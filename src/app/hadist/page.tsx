@@ -1,5 +1,5 @@
 import HadisList from "@/components/HadistList";
-import { getHadistResponse } from "@/lib/api-libs";
+import { getHadistResponse } from "@/libs/api-libs";
 
 const Page = async () => {
   const resSemuaHadist = await getHadistResponse("hadith");
