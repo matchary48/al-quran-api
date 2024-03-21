@@ -18,7 +18,7 @@ const DetailHadistList = ({ data, items }) => {
           <button onClick={handleBack}>
             <ArrowLeft />
           </button>
-          <h1>Hadist {data.name}</h1>
+          <h1>Hadist {data.name}</h1> 
         </div>
         <div>
           {items.map((item, index) => {

@@ -49,7 +49,7 @@ const Navbar = () => {
             href="/hadist"
             className="text-lg font-medium hover:text-gray-800 focus:outline-none"
           >
-            Hadis
+            Hadist
           </Link>
 
           <div className="flex gap-2 md:gap-4 border-2 rounded-full">
