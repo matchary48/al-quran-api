@@ -12,8 +12,8 @@ const DetailSurahList = ({ data, doa, detail }) => {
     router.back();
   };
   return (
-    <div>
-      <button onClick={handleBack} className="p-4 flex ">
+    <>
+      <button onClick={handleBack} className="p-4 flex gap-1">
         <ArrowLeft /> KEMBALI
       </button>
       <div className="flex px-2">
@@ -53,7 +53,7 @@ const DetailSurahList = ({ data, doa, detail }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
