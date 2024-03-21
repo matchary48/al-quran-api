@@ -1,24 +1,14 @@
-'use client';
+"use client";
 
-import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
+import BackButton from "../utilities/BackButton";
 
 const DetailHadistList = ({ data, items }) => {
-    const router = useRouter();
-
-    const handleBack = (e) => {
-        e.preventDefault();
-        router.back();
-    }
-    
-    return (
+  return (
     <>
       <div className="p-4">
         <div className="flex text-xl justify-between ">
-          <button onClick={handleBack}>
-            <ArrowLeft />
-          </button>
-          <h1>Hadist {data.name}</h1> 
+          <BackButton />
+          <h1>Hadist {data.name}</h1>
         </div>
         <div>
           {items.map((item, index) => {

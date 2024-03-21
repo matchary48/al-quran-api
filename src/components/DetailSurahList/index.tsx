@@ -1,21 +1,12 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import BackButton from "../utilities/BackButton";
 
 const DetailSurahList = ({ data, doa, detail }) => {
-  const router = useRouter();
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    router.back();
-  };
   return (
     <>
-      <button onClick={handleBack} className="p-4 flex gap-1">
-        <ArrowLeft /> KEMBALI
-      </button>
+      <BackButton />
       <div className="flex px-2">
         {/* Main Content */}
         <div className="w-full ">
