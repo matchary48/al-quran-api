@@ -1,74 +1,81 @@
 "use client";
 
+"use client";
 import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
 const Navbar = () => {
-  const { setTheme } = useTheme();
-  const [isLight, setIslight] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [showMenu, setShowMenu] = useState(false);
 
-  const handleLight = () => {
-    setTheme("light");
-    setIslight(true);
-    setIsDark(false);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
 
-  const handleDark = () => {
-    setTheme("dark");
-    setIslight(false);
-    setIsDark(true);
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
-    <>
-      <div className="flex justify-between items-center p-4 bg-gray-400 w-full">
-        <div className="flex items-center ">
-          <Link href="/" className="text-xl font-bold">
-            NgaJol
-          </Link>
-        </div>
+    <div>
+      <div className="flex items-center justify-between p-4 bg-gray-500 ">
+        <Link href="/" className="flex items-center">
+          <h1 className="text-xl font-bold">NGAJOL</h1>
+        </Link>
 
-        <div className="flex gap-2 md:gap-6 justify-center items-center">
-          <Link
-            href="/quran"
-            className="text-lg font-medium hover:text-gray-800 focus:outline-none"
-          >
-            Quran
-          </Link>
-          <Link
-            href="/doa"
-            className="text-lg font-medium hover:text-gray-800 focus:outline-none"
-          >
-            Doa 
-          </Link>
-
-          <Link
-            href="/hadist"
-            className="text-lg font-medium hover:text-gray-800 focus:outline-none"
-          >
-            Hadist
-          </Link>
-
-          <div className="flex gap-2 md:gap-4 border-2 rounded-full">
+        <div className="hidden md:flex gap-10 justify-center items-center">
+          {" "}
+          {/* Hide this on mobile */}
+          <Link href="/quran">Quran</Link>
+          <Link href="/doa">Doa</Link>
+          <Link href="/hadist">Hadist</Link>
+          <div className="flex items-center">
             <button
-              onClick={handleLight}
-              className={`rounded-full p-2 ${isLight ? "bg-white" : ""}`}
+              onClick={toggleTheme}
+              className=" focus:outline-none border-2 rounded-full p-2"
             >
-              <SunIcon />
-            </button>
-            <button
-              className={`rounded-full p-2 ${isDark ? "bg-black" : ""}`}
-              onClick={handleDark}
-            >
-              <MoonIcon />
+              {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
           </div>
         </div>
+
+        <div className="md:hidden flex gap-5">
+          {" "}
+          <button
+            onClick={toggleMenu}
+            className="text-gray-300 focus:outline-none text-xl"
+          >
+            ☰
+          </button>
+          <div className="flex items-center">
+            <button
+              onClick={toggleTheme}
+              className="text-gray-300 focus:outline-none border-2 p-2 rounded-full"
+            >
+              {theme === "light" ? <MoonIcon /> : <SunIcon />}
+            </button>
+          </div>
+        </div>
+
+        {showMenu && (
+          <div className="md:hidden absolute top-16 left-4 right-4 bg-gray-500 rounded shadow-md p-4">
+            <div className="flex flex-col gap-2">
+              <Link href="/quran" onClick={toggleMenu}>
+                Quran
+              </Link>
+              <Link href="/doa" onClick={toggleMenu}>
+                Doa
+              </Link>
+              <Link href="/hadist" onClick={toggleMenu}>
+                Hadist
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
