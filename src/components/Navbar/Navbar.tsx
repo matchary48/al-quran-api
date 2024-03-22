@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -25,7 +26,7 @@ const Navbar = () => {
           <h1 className="text-xl font-bold">NGAJOL</h1>
         </Link>
 
-        <div className="hidden md:flex gap-10 justify-center items-center">
+        <div className="hidden md:flex gap-10 justify-center items-center font-bold">
           {" "}
           {/* Hide this on mobile */}
           <Link href="/quran">Quran</Link>
@@ -34,7 +35,11 @@ const Navbar = () => {
           <div className="flex items-center">
             <button
               onClick={toggleTheme}
-              className=" focus:outline-none border-2 rounded-full p-2"
+              className={`focus:outline-none rounded-full p-2 ${
+                theme === "light"
+                  ? "bg-black text-white"
+                  : "bg-white text-black"
+              }`}
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
@@ -47,12 +52,16 @@ const Navbar = () => {
             onClick={toggleMenu}
             className="text-gray-300 focus:outline-none text-xl"
           >
-            ☰
+            {showMenu ? <FiX /> : <FiMenu />}
           </button>
           <div className="flex items-center">
             <button
               onClick={toggleTheme}
-              className="text-gray-300 focus:outline-none border-2 p-2 rounded-full"
+              className={`focus:outline-none rounded-full p-2 ${
+                theme === "light"
+                  ? "bg-black text-white"
+                  : "bg-white text-black"
+              }`}
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
