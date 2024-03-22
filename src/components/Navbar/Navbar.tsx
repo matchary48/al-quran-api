@@ -1,6 +1,5 @@
 "use client";
 
-"use client";
 import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
@@ -48,12 +47,6 @@ const Navbar = () => {
 
         <div className="md:hidden flex gap-5">
           {" "}
-          <button
-            onClick={toggleMenu}
-            className="text-gray-300 focus:outline-none text-xl"
-          >
-            {showMenu ? <FiX /> : <FiMenu />}
-          </button>
           <div className="flex items-center">
             <button
               onClick={toggleTheme}
@@ -66,6 +59,12 @@ const Navbar = () => {
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
           </div>
+          <button
+            onClick={toggleMenu}
+            className="text-gray-300 focus:outline-none text-2xl"
+          >
+            {showMenu ? <FiX /> : <FiMenu />}
+          </button>
         </div>
 
         {showMenu && (
