@@ -3,7 +3,7 @@ import Pagination from "@/components/utilities/Pagination";
 import { getDetailHadist } from "@/libs/api-libs";
 
 const Page = async ({ params: { nama } }) => {
-  const page = 4;
+  const page = 3;
   const data = await getDetailHadist("hadith", `${nama}`, `${page}`);
 
   const items = data.items;

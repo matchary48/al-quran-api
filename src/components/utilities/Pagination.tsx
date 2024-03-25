@@ -1,3 +1,5 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
 const Pagination = ({ page, lastPage, setPage }) => {
   const scrollTop = () => {
     scrollTo({
@@ -22,7 +24,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
           onClick={handlePrevPage}
           className="transition-all hover:text-color-accent"
         >
-          Prev
+          <ArrowLeft />
         </button>
       )}
       <p>
@@ -33,7 +35,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
           onClick={handleNextPage}
           className="transition-all hover:text-color-accent"
         >
-          Next
+          <ArrowRight />
         </button>
       )}
     </div>

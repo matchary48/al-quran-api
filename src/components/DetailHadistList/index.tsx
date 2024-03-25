@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import BackButton from "../utilities/BackButton";
 import Pagination from "../utilities/Pagination";
 
 const DetailHadistList = ({ data, items }) => {
+  const [page, setPage] = useState(1);
   return (
     <>
       <BackButton />
@@ -29,6 +31,11 @@ const DetailHadistList = ({ data, items }) => {
           })}
         </div>
       </div>
+      <Pagination
+        page={data.pagination.currentPage}
+        lastPage={data.pagination.totalPages}
+        setPage={page}
+      />
     </>
   );
 };
